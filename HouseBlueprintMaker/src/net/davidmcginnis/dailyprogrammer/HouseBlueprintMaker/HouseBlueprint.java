@@ -1,4 +1,4 @@
-package net.davidmcginnis.HouseBlueprintMaker;
+package net.davidmcginnis.dailyprogrammer.HouseBlueprintMaker;
 
 public class HouseBlueprint {
 	private char[][] _output;

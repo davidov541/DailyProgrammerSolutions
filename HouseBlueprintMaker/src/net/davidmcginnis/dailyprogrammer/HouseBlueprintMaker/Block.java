@@ -1,4 +1,4 @@
-package net.davidmcginnis.HouseBlueprintMaker;
+package net.davidmcginnis.dailyprogrammer.HouseBlueprintMaker;
 
 import java.io.IOException;
 import java.nio.file.Files;
