@@ -31,7 +31,7 @@ public class Frame {
 		int thirdBall = 0;
 		if(frameRep.length() > 2)
 		{
-			thirdBall = parseBall(frameRep.substring(2, 3), 0);
+			thirdBall = parseBall(frameRep.substring(2, 3), secondBall);
 		}
 		return new Frame(firstBall, secondBall, thirdBall);
 	}

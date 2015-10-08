@@ -39,6 +39,18 @@ public class FrameTests {
 	}
 	
 	@Test
+	public void testEndFrameSpareStrike() {
+		Frame f = Frame.parseFrame("3/X");
+		assertEquals(20, f.getScore());
+	}
+	
+	@Test
+	public void testEndFrameStrikeSpare() {
+		Frame f = Frame.parseFrame("X3/");
+		assertEquals(20, f.getScore());
+	}
+	
+	@Test
 	public void testEndFrameThreeStrikes() {
 		Frame f = Frame.parseFrame("XXX");
 		assertEquals(30, f.getScore());
