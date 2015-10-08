@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import net.davidmcginnis.dailyprogrammer.bowlingscorekeeper.Game;
 
-public class BowlingScorekeeperTests {
+public class GameTests {
 
 	@Test
 	public void testPerfectGame() {
