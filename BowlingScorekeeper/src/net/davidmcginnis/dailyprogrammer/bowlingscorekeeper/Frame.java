@@ -3,45 +3,62 @@ package net.davidmcginnis.dailyprogrammer.bowlingscorekeeper;
 public class Frame {
 	private int firstBall;
 	private int secondBall;
+	private int thirdBall;
 
 	private Frame nextFrame;
 
 	private Frame(int firstBall, int secondBall)
 	{
+		this(firstBall, secondBall, 0);
+	}
+	
+	private Frame(int firstBall, int secondBall, int thirdBall)
+	{
 		this.firstBall = firstBall;
 		this.secondBall = secondBall;
+		this.thirdBall = thirdBall;
 		this.nextFrame = null;
 	}
 	
 	public static Frame parseFrame(String frameRep)
 	{
-		int firstBall = 0;
+		int firstBall = parseBall(frameRep.substring(0, 1), 0);
 		int secondBall = 0;
-		if(frameRep == "X")
+		if(frameRep.length() > 1)
 		{
-			firstBall = 10;
+			secondBall = parseBall(frameRep.substring(1, 2), firstBall);
+		}
+		int thirdBall = 0;
+		if(frameRep.length() > 2)
+		{
+			thirdBall = parseBall(frameRep.substring(2, 3), 0);
+		}
+		return new Frame(firstBall, secondBall, thirdBall);
+	}
+	
+	private static int parseBall(String str, int previousBalls)
+	{
+		if(str.equals("X"))
+		{
+			return 10;
+		}
+		else if(str.equals("/"))
+		{
+			return 10 - previousBalls;
+		}
+		else if(str.equals("-"))
+		{
+			return 0;
 		}
 		else
 		{
-			if(frameRep.substring(0, 1) != "-")
-			{
-				firstBall = Integer.parseInt(frameRep.substring(0, 1));
-			}
-			if(frameRep.substring(1, 1) == "/")
-			{
-				secondBall = 10 - firstBall;
-			}
-			else if(frameRep.substring(1, 1) != "-")
-			{
-				secondBall = Integer.parseInt(frameRep.substring(1, 1));
-			}
+			return Integer.parseInt(str);
 		}
-		return new Frame(firstBall, secondBall);
 	}
 	
 	public int getScore()
 	{
-		int score = firstBall + secondBall;
+		int score = firstBall + secondBall + thirdBall;
 		if(firstBall == 10 && nextFrame != null)
 		{
 			score += nextFrame.firstBall + nextFrame.secondBall;
