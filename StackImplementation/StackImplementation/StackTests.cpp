@@ -154,6 +154,45 @@ void PushPop_Test()
 	std::cout << "SUCCESS -- PushPop_Test" << std::endl;
 }
 
+void StackExpansion_Test()
+{
+	ERROR errorCode = NOERR;
+	Stack<int> stack = Stack<int>();
+	stack.Push(1, &errorCode);
+	stack.Push(2, &errorCode);
+	stack.Push(3, &errorCode);
+	stack.Push(4, &errorCode);
+	stack.Push(5, &errorCode);
+	stack.Push(6, &errorCode);
+	stack.Push(7, &errorCode);
+	stack.Push(8, &errorCode);
+	if (errorCode != NOERR)
+	{
+		std::cout << "ERROR -- Got error on one of the pushes. StackExpansion_Test failed!" << std::endl;
+	}
+	if (!stack.HasValue(&errorCode))
+	{
+		std::cout << "ERROR -- Data not left in stack after pushes. StackExpansion_Test failed!" << std::endl;
+		return;
+	}
+	if (stack.Pop(&errorCode) != 8 ||
+		stack.Pop(&errorCode) != 7 ||
+		stack.Pop(&errorCode) != 6 ||
+		stack.Pop(&errorCode) != 5 ||
+		stack.Pop(&errorCode) != 4 ||
+		stack.Pop(&errorCode) != 3 ||
+		stack.Pop(&errorCode) != 2 ||
+		stack.Pop(&errorCode) != 1)
+	{
+		std::cout << "ERROR -- Data was not correct in the stack once it was expanded. StackExpansion_Test failed!" << std::endl;
+	}
+	if (errorCode != NOERR)
+	{
+		std::cout << "ERROR -- Got error on one of the pops. StackExpansion_Test failed!" << std::endl;
+	}
+	std::cout << "SUCCESS -- StackExpansion_Test" << std::endl;
+}
+
 void NoElementStack_Test()
 {
 	ERROR errorCode = NOERR;
@@ -183,6 +222,7 @@ int main()
 {
 	PushPeek_Test();
 	PushPop_Test();
+	StackExpansion_Test();
 	NoElementStack_Test();
 	std::cin.ignore();
 	return 0;
