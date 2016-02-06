@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InterviewQuestion", "InterviewQuestion\InterviewQuestion.vcxproj", "{F03AE8CC-D3D3-41A7-A8BB-249F4BCBA625}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StackImplementation", "StackImplementation\StackImplementation.vcxproj", "{F03AE8CC-D3D3-41A7-A8BB-249F4BCBA625}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,14 +24,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 2
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://davidmcginnis.visualstudio.com/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = InterviewQuestion\\InterviewQuestion.vcxproj
-		SccProjectName1 = InterviewQuestion
-		SccLocalPath1 = InterviewQuestion
 	EndGlobalSection
 EndGlobal
