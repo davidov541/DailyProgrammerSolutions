@@ -1,3 +1,9 @@
 ﻿################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
+/StackInterviewQuestion/$tf
+/StackInterviewQuestion/.vs
+/StackInterviewQuestion/Debug
+/StackInterviewQuestion/InterviewQuestion/Debug
+/StackInterviewQuestion/ipch
+/StackInterviewQuestion/StackImplementation.sdf
